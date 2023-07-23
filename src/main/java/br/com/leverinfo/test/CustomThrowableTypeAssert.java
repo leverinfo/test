@@ -14,9 +14,10 @@ public class CustomThrowableTypeAssert<T extends ValidationException>
 
   @Override
   public CustomThrowableAssertAlternative<T> isThrownBy(ThrowingCallable throwingCallable) {
-    super.isThrownBy(throwingCallable);
-    Throwable throwable =
-        ThrowableAssert.catchThrowableOfType(throwingCallable, expectedThrowableType);
-    return new CustomThrowableAssertAlternative<>(expectedThrowableType.cast(throwable));
+    Throwable throwable = ThrowableAssert.catchThrowable(throwingCallable);
+    checkThrowableType(throwable);
+    @SuppressWarnings("unchecked")
+    T castThrowable = (T) throwable;
+    return new CustomThrowableAssertAlternative<>(castThrowable);
   }
 }

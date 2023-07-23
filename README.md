@@ -14,18 +14,32 @@ To start, add that Maven dependency:
 <dependency>
   <groupId>br.com.leverinfo</groupId>
   <artifactId>test</artifactId>
-  <version>0.1.0</version>
+  <version>0.1.1</version>
 </dependency>
 ```
 
+or Gradle:
+
+```
+implementation 'br.com.leverinfo:test:0.1.1'
+```
+
 This must be use together with `br.com.leverinfo:validation`, so you need to import it as well:
+
+Maven:
 
 ```
 <dependency>
   <groupId>br.com.leverinfo</groupId>
   <artifactId>validation</artifactId>
-  <version>0.2.0</version>
+  <version>0.3.1</version>
 </dependency>
+```
+
+Gradle:
+
+```
+implementation 'br.com.leverinfo:validation:0.3.1'
 ```
 
 Assuming that we have an example like the one described [here](https://github.com/leverinfo/validation/blob/main/README.md#how-to-use)...
