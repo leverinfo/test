@@ -4,31 +4,31 @@ import br.com.leverinfo.validation.exception.*;
 
 public class ValidationAssertions {
 
-  public static CustomThrowableTypeAssert<RequiredArgumentException>
+  public static ValidationThrowableTypeAssert<RequiredArgumentException>
       assertThatRequiredArgumentException() {
-    return new CustomThrowableTypeAssert<>(RequiredArgumentException.class);
+    return new ValidationThrowableTypeAssert<>(RequiredArgumentException.class);
   }
 
-  public static CustomThrowableTypeAssert<InvalidArgumentException>
+  public static ValidationThrowableTypeAssert<InvalidArgumentException>
       assertThatInvalidArgumentException() {
-    return new CustomThrowableTypeAssert<>(InvalidArgumentException.class);
+    return new ValidationThrowableTypeAssert<>(InvalidArgumentException.class);
   }
 
-  public static CustomThrowableTypeAssert<NotAllowedException> assertThatNotAllowedException() {
-    return new CustomThrowableTypeAssert<>(NotAllowedException.class);
+  public static ValidationThrowableTypeAssert<NotAllowedException> assertThatNotAllowedException() {
+    return new ValidationThrowableTypeAssert<>(NotAllowedException.class);
   }
 
-  public static CustomThrowableTypeAssert<NotFoundException> assertThatNotFoundException() {
-    return new CustomThrowableTypeAssert<>(NotFoundException.class);
+  public static ValidationThrowableTypeAssert<NotFoundException> assertThatNotFoundException() {
+    return new ValidationThrowableTypeAssert<>(NotFoundException.class);
   }
 
-  public static CustomThrowableTypeAssert<DependencyNotFoundException>
+  public static ValidationThrowableTypeAssert<DependencyNotFoundException>
       assertThatDependencyNotFoundException() {
-    return new CustomThrowableTypeAssert<>(DependencyNotFoundException.class);
+    return new ValidationThrowableTypeAssert<>(DependencyNotFoundException.class);
   }
 
-  public static CustomThrowableTypeAssert<DuplicatedException> assertThatDuplicatedException() {
-    return new CustomThrowableTypeAssert<>(DuplicatedException.class);
+  public static ValidationThrowableTypeAssert<DuplicatedException> assertThatDuplicatedException() {
+    return new ValidationThrowableTypeAssert<>(DuplicatedException.class);
   }
 
   private ValidationAssertions() {}

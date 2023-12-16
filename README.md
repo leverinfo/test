@@ -14,14 +14,14 @@ To start, add that Maven dependency:
 <dependency>
   <groupId>br.com.leverinfo</groupId>
   <artifactId>test</artifactId>
-  <version>0.1.1</version>
+  <version>0.2.0</version>
 </dependency>
 ```
 
 or Gradle:
 
 ```
-implementation 'br.com.leverinfo:test:0.1.1'
+implementation 'br.com.leverinfo:test:0.2.0'
 ```
 
 This must be use together with `br.com.leverinfo:validation`, so you need to import it as well:
@@ -32,14 +32,14 @@ Maven:
 <dependency>
   <groupId>br.com.leverinfo</groupId>
   <artifactId>validation</artifactId>
-  <version>0.3.1</version>
+  <version>0.4.0</version>
 </dependency>
 ```
 
 Gradle:
 
 ```
-implementation 'br.com.leverinfo:validation:0.3.1'
+implementation 'br.com.leverinfo:validation:0.4.0'
 ```
 
 Assuming that we have an example like the one described [here](https://github.com/leverinfo/validation/blob/main/README.md#how-to-use)...
@@ -72,7 +72,8 @@ Below are the available assertions:
 * `assertThatDependencyNotFoundException` - Asserts that a `DependencyNotFoundException` was thrown
 * `assertThatDuplicatedException` - Asserts that a `DuplicatedException` was thrown
 ---
-* `withValidationMessage` - Asserts that a `ValidationMessage` is present in thrown exception
+* `withValidationMessage` - Validate if the thrown exception has expected `ValidationMessage` 
+* `withParams` - Validate if the thrown exception has correct params
 
 ## Roadmap
 

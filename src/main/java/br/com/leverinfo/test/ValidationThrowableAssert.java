@@ -2,14 +2,15 @@ package br.com.leverinfo.test;
 
 import br.com.leverinfo.validation.ValidationMessage;
 import br.com.leverinfo.validation.exception.ValidationException;
+import java.util.Arrays;
 import java.util.Objects;
 import org.assertj.core.api.ThrowableAssert;
 import org.assertj.core.internal.Failures;
 
-public class CustomThrowableAssert<ACTUAL extends ValidationException>
+public class ValidationThrowableAssert<ACTUAL extends ValidationException>
     extends ThrowableAssert<ACTUAL> {
 
-  public CustomThrowableAssert(ACTUAL actual) {
+  public ValidationThrowableAssert(ACTUAL actual) {
     super(actual);
   }
 
@@ -26,6 +27,21 @@ public class CustomThrowableAssert<ACTUAL extends ValidationException>
               ShouldHaveMessageValidation.shouldHaveMessage(internal, message),
               internal.getMessage(),
               message);
+    }
+  }
+
+  public void hasParams(Object... params) {
+    org.assertj.core.internal.Objects.instance().assertNotNull(info, actual);
+    org.assertj.core.internal.Objects.instance()
+        .assertIsInstanceOf(info, actual, ValidationException.class);
+    ValidationException internal = actual;
+    if (!Arrays.equals(internal.getParams(), params)) {
+      throw Failures.instance()
+          .failure(
+              info,
+              ShouldHaveParams.shouldHaveParams(internal, params),
+              internal.getParams(),
+              params);
     }
   }
 }

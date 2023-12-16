@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.0
+
+### Improvements
+
+* Add option to validate the thrown exception parameters
+
 ## 0.1.1
 
 ### Bug fixes

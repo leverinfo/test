@@ -5,19 +5,19 @@ import org.assertj.core.api.ThrowableAssert;
 import org.assertj.core.api.ThrowableAssert.ThrowingCallable;
 import org.assertj.core.api.ThrowableTypeAssert;
 
-public class CustomThrowableTypeAssert<T extends ValidationException>
+public class ValidationThrowableTypeAssert<T extends ValidationException>
     extends ThrowableTypeAssert<T> {
 
-  public CustomThrowableTypeAssert(Class<T> throwableType) {
+  public ValidationThrowableTypeAssert(Class<T> throwableType) {
     super(throwableType);
   }
 
   @Override
-  public CustomThrowableAssertAlternative<T> isThrownBy(ThrowingCallable throwingCallable) {
+  public ValidationThrowableAssertAlternative<T> isThrownBy(ThrowingCallable throwingCallable) {
     Throwable throwable = ThrowableAssert.catchThrowable(throwingCallable);
     checkThrowableType(throwable);
     @SuppressWarnings("unchecked")
     T castThrowable = (T) throwable;
-    return new CustomThrowableAssertAlternative<>(castThrowable);
+    return new ValidationThrowableAssertAlternative<>(castThrowable);
   }
 }
